@@ -1,6 +1,5 @@
 package com.company.action;
-
-import com.company.Player;
+import com.company.player.Player;
 
 public class RansomeTreasury implements Action {
     Player player;
@@ -15,8 +14,8 @@ public class RansomeTreasury implements Action {
     }
 
     public boolean isValidate() {
-        if((player.firstCard.getName().equals("Duke") && player.firstCard.isAlive()) ||
-                (player.secondCard.getName().equals("Duke") && player.secondCard.isAlive())) {
+        if((player.getFirstCard().getName().equals("Duke") && player.getFirstCard().isAlive()) ||
+                (player.getSecondCard().getName().equals("Duke") && player.getSecondCard().isAlive())) {
             return true;
         }
         return false;

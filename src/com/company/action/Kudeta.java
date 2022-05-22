@@ -1,14 +1,14 @@
 package com.company.action;
+import com.company.player.Player;
 
-import com.company.Player;
 
 public class Kudeta implements  Action {
     Player player;
     Player target;
 
     public Kudeta(Player player, Player target) {
-        this.player = player.Copy();
-        this.target = target.Copy();
+        this.player = player;
+        this.target = target;
     }
 
     public boolean isChallengable() {

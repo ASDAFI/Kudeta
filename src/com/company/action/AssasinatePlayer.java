@@ -1,6 +1,6 @@
 package com.company.action;
 
-import com.company.Player;
+import com.company.player.Player;
 
 public class AssasinatePlayer implements Action {
     Player player;
@@ -16,11 +16,13 @@ public class AssasinatePlayer implements Action {
     }
 
     public boolean isValidate(){
-        if((player.firstCard.getName().equals("Assasin") && player.firstCard.isAlive()) || (player.secondCard.getName().equals("Assasin") && player.secondCard.isAlive())){
+        if((player.getFirstCard().getName().equals("Assasin") && player.getFirstCard().isAlive()) ||
+                (player.getSecondCard().getName().equals("Assasin") && player.getSecondCard().isAlive())){
             return true;
         }
         return false;
     }
+
 
     public void punish(Player player) {
         player.ChooseDeathCard();

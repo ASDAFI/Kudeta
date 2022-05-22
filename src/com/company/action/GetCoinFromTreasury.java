@@ -1,5 +1,6 @@
 package com.company.action;
-import com.company.Player;
+
+import com.company.player.Player;
 
 public class GetCoinFromTreasury implements Action {
     int coins;

@@ -1,6 +1,6 @@
 package com.company.action;
 
-import com.company.Player;
+import com.company.player.Player;
 
 public class ExchangeCards implements Action {
     Player player;
@@ -17,8 +17,8 @@ public class ExchangeCards implements Action {
         System.out.println(player.getId() + " Exchange cards.");
     }
      public boolean isValidate() {
-        if((player.firstCard.getName().equals("Ambassador") && player.firstCard.isAlive()) ||
-                (player.secondCard.getName().equals("Ambassador") && player.secondCard.isAlive())) {
+        if((player.getFirstCard().getName().equals("Ambassador") && player.getFirstCard().isAlive()) ||
+                (player.getSecondCard().getName().equals("Ambassador") && player.getSecondCard().isAlive())) {
             return true;
         }
         return false;
