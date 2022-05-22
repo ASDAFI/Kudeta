@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.player.Player;
 import com.company.reaction.Reaction;
 
 public class ReactionPlayer {
@@ -9,6 +10,9 @@ public class ReactionPlayer {
         this.reaction = reaction;
         this.player = player;
     }
+
+
+
     public Reaction getReaction(){
         return reaction;
     }
