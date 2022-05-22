@@ -1,6 +1,7 @@
 package com.company.reaction;
 
-import com.company.Player;
+import com.company.player.Player;
+
 
 public class BanTreasury implements Reaction{
     Player player;
@@ -13,8 +14,8 @@ public class BanTreasury implements Reaction{
 
 
     public boolean isValidate() {
-        if((player.firstCard.getName().equals("Duke") && player.firstCard.isAlive()) ||
-                (player.secondCard.getName().equals("Duke") && player.secondCard.isAlive())) {
+        if((player.getFirstCard().getName().equals("Duke") && player.getFirstCard().isAlive()) ||
+                (player.getSecondCard().getName().equals("Duke") && player.getSecondCard().isAlive())) {
             return true;
         }
         return false;

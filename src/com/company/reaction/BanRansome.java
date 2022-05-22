@@ -1,6 +1,6 @@
 package com.company.reaction;
 
-import com.company.Player;
+import com.company.player.Player;
 
 public class BanRansome implements Reaction {
     Player player;
@@ -13,10 +13,10 @@ public class BanRansome implements Reaction {
 
 
     public boolean isValidate() {
-        if(((player.firstCard.getName().equals("Ambassador") || player.firstCard.getName().equals("Captain"))
-                && player.firstCard.isAlive()) ||
-                ((player.secondCard.getName().equals("Ambassador") || player.secondCard.getName().equals("Captain"))
-                        && player.secondCard.isAlive())) {
+        if(((player.getFirstCard().getName().equals("Ambassador") || player.getFirstCard().getName().equals("Captain"))
+                && player.getFirstCard().isAlive()) ||
+                ((player.getSecondCard().getName().equals("Ambassador") || player.getSecondCard().getName().equals("Captain"))
+                        && player.getSecondCard().isAlive())) {
             return true;
         }
         return false;

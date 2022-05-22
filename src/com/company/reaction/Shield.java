@@ -1,6 +1,6 @@
 package com.company.reaction;
+import com.company.player.Player;
 
-import com.company.Player;
 
 public class Shield implements Reaction {
     Player player;
@@ -12,8 +12,8 @@ public class Shield implements Reaction {
     }
 
     public boolean isValidate() {
-        if((player.firstCard.getName().equals("Contessa") && player.firstCard.isAlive()) ||
-                (player.secondCard.getName().equals("Contessa") && player.secondCard.isAlive())) {
+        if((player.getFirstCard().getName().equals("Contessa") && player.getFirstCard().isAlive()) ||
+                (player.getSecondCard().getName().equals("Contessa") && player.getSecondCard().isAlive())) {
             return true;
         }
         return false;

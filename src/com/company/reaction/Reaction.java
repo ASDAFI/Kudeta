@@ -1,6 +1,5 @@
 package com.company.reaction;
-
-import com.company.Player;
+import com.company.player.Player;
 
 public interface Reaction {
     boolean isValidate();
