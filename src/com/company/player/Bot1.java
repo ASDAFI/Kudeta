@@ -1,15 +1,18 @@
-package com.company;
+package com.company.player;
+
+import com.company.Card;
+import com.company.State;
 import com.company.action.Action;
 import com.company.reaction.Reaction;
 
-public class Player {
+public class Bot1 {
     private int id;
     int coins;
     private boolean alive;
     public Card firstCard;
     public Card secondCard;
 
-    public Player(int id, int coins, Card[] cards, boolean alive) {
+    public Bot1(int id, int coins, Card[] cards, boolean alive) {
         this.id = id;
         this.coins = coins;
         this.firstCard = cards[0];
@@ -17,9 +20,6 @@ public class Player {
         this.alive = alive;
     }
 
-    public Player Copy() {
-        return new Player(this.id, this.coins, new Card[]{this.firstCard, this.secondCard}, this.alive);
-    }
 
     public int getId() {
         return id;
