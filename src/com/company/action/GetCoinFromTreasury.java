@@ -4,6 +4,7 @@ import com.company.Player;
 public class GetCoinFromTreasury implements Action {
     int coins;
     Player player;
+    Player target;
 
     public GetCoinFromTreasury(Player player, int coins) {
         this.coins = coins;
@@ -43,6 +44,18 @@ public class GetCoinFromTreasury implements Action {
             return false;
         }
         return true;
+    }
+
+    public boolean hasTarget() {
+        return false;
+    }
+
+    public Player getTarget() {
+        return target;
+    }
+
+    public String getName(){
+        return "GetCoinFromTreasury";
     }
 }
 

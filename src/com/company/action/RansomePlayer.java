@@ -49,4 +49,16 @@ public class RansomePlayer implements Action {
     public boolean hasReaction(){
         return true;
     }
+
+    public boolean hasTarget() {
+        return true;
+    }
+
+    public Player getTarget() {
+        return target;
+    }
+
+    public String getName(){
+        return "Ransome";
+    }
 }

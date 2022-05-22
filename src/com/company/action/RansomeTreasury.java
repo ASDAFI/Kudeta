@@ -4,6 +4,7 @@ import com.company.Player;
 
 public class RansomeTreasury implements Action {
     Player player;
+    Player target;
 
     public RansomeTreasury(Player player) {
         this.player = player;
@@ -41,6 +42,18 @@ public class RansomeTreasury implements Action {
             return true;
         }
         return false;
+    }
+
+    public boolean hasTarget() {
+        return false;
+    }
+
+    public Player getTarget() {
+        return target;
+    }
+
+    public String getName(){
+        return "Ransome Treasury";
     }
 }
 

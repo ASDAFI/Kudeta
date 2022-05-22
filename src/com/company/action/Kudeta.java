@@ -42,4 +42,16 @@ public class Kudeta implements  Action {
     public boolean hasReaction() {
         return false;
     }
+
+    public boolean hasTarget() {
+        return true;
+    }
+
+    public Player getTarget() {
+        return target;
+    }
+
+    public String getName(){
+        return "Kudeta";
+    }
 }

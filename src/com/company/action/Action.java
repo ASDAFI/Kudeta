@@ -9,4 +9,7 @@ public interface Action {
     void log();
     boolean isPermitted();
     boolean hasReaction();
+    Player getTarget();
+    boolean hasTarget();
+    String getName();
 }

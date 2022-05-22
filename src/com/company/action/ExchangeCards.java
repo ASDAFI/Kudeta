@@ -4,7 +4,7 @@ import com.company.Player;
 
 public class ExchangeCards implements Action {
     Player player;
-
+    Player target;
     public ExchangeCards(Player player) {
         this.player = player;
     }
@@ -40,5 +40,14 @@ public class ExchangeCards implements Action {
     public boolean isPermitted(){
         return true;
     }
+    public boolean hasTarget() {
+        return false;
+    }
+    public Player getTarget() {
+        return target;
+    }
 
+    public String getName(){
+        return "Exchange Cards";
+    }
 }

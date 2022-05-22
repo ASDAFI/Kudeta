@@ -42,5 +42,14 @@ public class AssasinatePlayer implements Action {
         return true;
     }
 
+    public boolean hasTarget() {
+        return true;
+    }
+    public Player getTarget() {
+        return target;
+    }
 
+    public String getName(){
+        return "Assasinate";
+    }
 }
