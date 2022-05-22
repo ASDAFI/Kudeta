@@ -53,4 +53,7 @@ public class Player {
     public void setCoins(int coins) {
         this.coins = coins;
     }
+
+    public void exchangeCards() {
+    }
 }
