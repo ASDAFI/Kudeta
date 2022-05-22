@@ -1,6 +1,7 @@
 package com.company;
 import com.company.action.Action;
 import com.company.reaction.Reaction;
+import com.company.player.Player;
 
 public class State {
 
@@ -12,6 +13,21 @@ public class State {
         this.players = players;
         this.cards = cards;
         this.round = round;
+    }
+
+    public void Setup() {
+        this.cards = new Card[15];
+        for (int i = 0; i < 15; i+=5) {
+            this.cards[i] = new Card(i, true, "Ambassador");
+            this.cards[i+1] = new Card(i+1, true, "Assassin");
+            this.cards[i+2] = new Card(i+2, true, "Contessa");
+            this.cards[i+3] = new Card(i+3, true, "Duke");
+            this.cards[i+4] = new Card(i+4, true, "Captain");
+        }
+
+
+
+
     }
 
     public Player ChallengeAction(Action action, int index) {
@@ -85,6 +101,18 @@ public class State {
         return null;
     }
 
+    public boolean isFinished() {
+        int n = 0;
+        for (Player player : players) {
+            if (player.isAlive()) {
+                n ++;
+            }
+        }
+        if(n > 1)
+            return false;
+        return true;
+    }
+
     public void runRound() {
         Player player;
         Player challenger;
@@ -124,5 +152,6 @@ public class State {
             }
             action.action.execute();
         }
+        round ++;
     }
 }
