@@ -1,5 +1,6 @@
 package com.company;
 import com.company.action.Action;
+import com.company.reaction.Reaction;
 
 public class Player {
     private int id;
@@ -46,7 +47,7 @@ public class Player {
     public void ChooseDeathCard() {
 
     }
-    public boolean isChallenged(Action action) {
+    public boolean isChallenged(Action action, State state) {
         return false;
     }
 
@@ -55,5 +56,11 @@ public class Player {
     }
 
     public void exchangeCards() {
+    }
+
+    public Reaction getReaction(Action action, State state) {
+    }
+
+    public boolean isChallengedReaction(Reaction reaction, State state) {
     }
 }
