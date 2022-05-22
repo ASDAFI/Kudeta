@@ -6,8 +6,8 @@ public class RansomePlayer implements Action {
     Player target;
 
     public RansomePlayer(Player player, Player target) {
-        this.player = player;
-        this.target = target;
+        this.player = player;//.Copy();
+        this.target = target;//.Copy();
     }
 
     public void execute() {
@@ -23,15 +23,15 @@ public class RansomePlayer implements Action {
 
 
     public boolean isValidate() {
-        if ((player.firstCard.getName().equals("captain") && player.firstCard.isAlive()) ||
-                (player.secondCard.getName().equals("captain") && player.secondCard.isAlive())) {
+        if ((player.firstCard.getName().equals("Captain") && player.firstCard.isAlive()) ||
+                (player.secondCard.getName().equals("Captain") && player.secondCard.isAlive())) {
             return true;
         }
         return false;
     }
 
     public void punish(Player player) {
-
+        player.ChooseDeathCard();
     }
 
     public boolean isChallengable() {
@@ -42,4 +42,11 @@ public class RansomePlayer implements Action {
         System.out.println(player.getId() + " ransome " + target.getId());
     }
 
+    public boolean isPermitted(){
+        return true;
+    }
+
+    public boolean hasReaction(){
+        return true;
+    }
 }

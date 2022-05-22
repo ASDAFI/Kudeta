@@ -7,8 +7,8 @@ public class AssasinatePlayer implements Action {
     Player target;
 
     public AssasinatePlayer(Player player, Player target) {
-        this.player = player.Copy();
-        this.target = target.Copy();
+        this.player = player;//.Copy();
+        this.target = target;//.Copy();
     }
 
     public void execute() {
@@ -23,14 +23,24 @@ public class AssasinatePlayer implements Action {
     }
 
     public void punish(Player player) {
-
+        player.ChooseDeathCard();
     }
 
     public boolean isChallengable(){
-        return false;
+        return true;
     }
 
     public void log() {
         System.out.println(player.getId() + " Assasinate " + target.getId());
     }
+
+    public boolean isPermitted(){
+        return true;
+    }
+
+    public boolean hasReaction(){
+        return true;
+    }
+
+
 }

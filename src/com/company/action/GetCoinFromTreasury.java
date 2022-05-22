@@ -7,8 +7,9 @@ public class GetCoinFromTreasury implements Action {
 
     public GetCoinFromTreasury(Player player, int coins) {
         this.coins = coins;
-        this.player = player.Copy();
+        this.player = player; //.Copy();
     }
+
     public void log() {
         System.out.println("Player " + player.getId() + " got " + coins + " coins from treasury");
     }
@@ -18,17 +19,30 @@ public class GetCoinFromTreasury implements Action {
     }
 
     public boolean isValidate(){
-        if(coins == 1) {
-            return true;
-        }
-        return false;
+        return true;
     }
 
     public void punish(Player player) {
 
     }
     public boolean isChallengable(){
-        return false;
+        if(coins == 1){
+            return false;
+        }
+        return true;
+    }
+    public boolean isPermitted(){
+        if(player.getCoins() >= 10){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean hasReaction() {
+        if(coins == 1) {
+            return false;
+        }
+        return true;
     }
 }
 

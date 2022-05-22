@@ -7,4 +7,6 @@ public interface Action {
     void punish(Player player);
     boolean isChallengable();
     void log();
+    boolean isPermitted();
+    boolean hasReaction();
 }
